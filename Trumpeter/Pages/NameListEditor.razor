@@ -1,0 +1,18 @@
+﻿@page "/名单编辑器"
+@using RazorClassLibrary1;
+@inject IJSRuntime JS;
+
+<h1>名单编辑器</h1>
+<div>@_displayNum</div>
+<button @onclick="Onclick">点击递增上面的数字</button>
+
+@code{
+
+	int _displayNum = 0;
+
+	async void Onclick()
+	{
+		_displayNum = await _getNum.GetAsync();
+		StateHasChanged();
+	}
+}

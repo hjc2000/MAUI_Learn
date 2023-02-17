@@ -1,0 +1,58 @@
+﻿@page "/"
+@using System.Text.RegularExpressions;
+@inject TrumpeterStorage TrumpeterStorage;
+
+<h1>普通摇号器</h1>
+<div>
+	<span style="font-weight:bold">
+		输入范围：
+	</span>
+	<span>从</span>
+	<input placeholder="最小值" @bind="Input1" @bind:event="oninput" />
+	<span>到</span>
+	<input placeholder="最大值" @bind="Input2" @bind:event="oninput" />
+</div>
+<div>
+	<button disabled="@ButtonDisabled" @onclick="OnButtonClick" >
+		@ButtonText
+	</button>
+</div>
+<div class="display">
+	@DisplayNum
+</div>
+
+@code {
+
+	string ButtonText = "开始摇号";
+	bool ButtonDisabled = true;
+
+	Regex _regex = new Regex(@"\D");
+
+	Random _random = new Random((int)DateTime.Now.Ticks);
+
+	Mutex _mutex = new Mutex();//互斥锁，不允许两个线程同时操作摇号结果
+	bool _stop = true;//停止摇号的信号
+
+	async Task OnButtonClick()
+	{
+		_stop = !_stop;
+		if(_stop)
+		{
+			ButtonText = "开始摇号";
+		}
+		else
+		{
+			ButtonText = "停止摇号";
+		}
+
+		// 临界区,禁止多个线程同时操作号码
+		_mutex.WaitOne();
+		while(!_stop)
+		{
+			DisplayNum = _random.Next(Min, Max + 1);
+			StateHasChanged();
+			await Task.Delay(25);
+		}
+		_mutex.ReleaseMutex();
+	}
+}

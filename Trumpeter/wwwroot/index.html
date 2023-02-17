@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+	<title>Trumpeter</title>
+	<base href="/" />
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+	<link href="css/app.css" rel="stylesheet" />
+	<link href="Trumpeter.styles.css" rel="stylesheet" />
+	<script>
+		// 这里的代码用来禁用 鼠标滚轮缩放、双指滑动缩放
+
+		window.addEventListener('mousewheel', function (event)
+		{
+			if (event.ctrlKey === true || event.metaKey)
+			{
+				event.preventDefault();
+			}
+		}, { passive: false });
+
+		//firefox
+		window.addEventListener('DOMMouseScroll', function (event)
+		{
+			if (event.ctrlKey === true || event.metaKey)
+			{
+				event.preventDefault();
+			}
+		}, { passive: false });
+
+
+		window.onload = function ()
+		{
+			document.addEventListener('touchstart', function (event)
+			{
+				if (event.touches.length >= 2)
+				{
+					event.preventDefault();
+				}
+			})
+
+			document.addEventListener('touchmove', function (event)
+			{
+				if (event.touches.length >= 2)
+				{
+					event.preventDefault();
+
+				}
+			})
+
+			document.addEventListener('touchend', function (event)
+			{
+				if (event.touches.length >= 2)
+				{
+
+					event.preventDefault();
+				}
+			})
+		}
+	</script>
+</head>
+
+<body>
+	<div class="status-bar-safe-area"></div>
+
+	<div id="app">Loading...</div>
+
+	<div id="blazor-error-ui">
+		An unhandled error has occurred.
+		<a href="" class="reload">Reload</a>
+		<a class="dismiss">🗙</a>
+	</div>
+
+	<script src="_framework/blazor.webview.js" autostart="false"></script>
+</body>
+
+</html>
