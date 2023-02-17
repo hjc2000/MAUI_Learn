@@ -19,7 +19,5 @@ int main()
 {
     Print();
     std::cout << myLib::Math::Add(665, 1) << std::endl;
-    getchar();
-    getchar();
     return 0;
 }
