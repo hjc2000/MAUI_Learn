@@ -1,16 +1,11 @@
 ﻿using Microsoft.JSInterop;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RazorClassLibrary1
 {
 	public class GetNum
 	{
-		IJSObjectReference? _module = null;
-		readonly ValueTask<IJSObjectReference> _moduleTask;//异步任务，用于加载模块
+		private IJSObjectReference? _module = null;
+		private readonly ValueTask<IJSObjectReference> _moduleTask;//异步任务，用于加载模块
 
 		public GetNum(IJSRuntime jSRuntime)
 		{

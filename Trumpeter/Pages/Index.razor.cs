@@ -93,7 +93,7 @@
 		/// <summary>
 		/// 摇号结果的数字
 		/// </summary>
-		int DisplayNum
+		private int DisplayNum
 		{
 			get
 			{
@@ -108,7 +108,7 @@
 		/// <summary>
 		/// 判断按钮是否可用并更新状态
 		/// </summary>
-		void ChangeButtonState()
+		private void ChangeButtonState()
 		{
 			if (Min < Max)
 			{

@@ -11,7 +11,7 @@ namespace DllOperator
 			_hDll = LoadLibrary(dll_file_path, h, flags);
 		}
 
-		IntPtr _hDll = IntPtr.Zero;//DLL模块的句柄
+		private IntPtr _hDll = IntPtr.Zero;//DLL模块的句柄
 
 		/// <summary>
 		/// 获取DLL中的对象的指针
@@ -23,15 +23,15 @@ namespace DllOperator
 			return GetProcAddress(_hDll, proc_name);
 		}
 
-		bool _freeSuccessfully = false;//标识是否成功释放DLL模块
+		private bool _freeSuccessfully = false;//标识是否成功释放DLL模块
 
 		#region 导入kernel32.dll中的函数
 		[DllImport("kernel32.dll", CallingConvention = CallingConvention.StdCall)]
-		static extern IntPtr LoadLibrary(string dll_file_path, int h, int flags);
+		private static extern IntPtr LoadLibrary(string dll_file_path, int h, int flags);
 		[DllImport("kernel32.dll", CharSet = CharSet.Ansi, ExactSpelling = true, SetLastError = true)]
-		static extern IntPtr GetProcAddress(IntPtr h_dll, string proc_name);
+		private static extern IntPtr GetProcAddress(IntPtr h_dll, string proc_name);
 		[DllImport("kernel32.dll", CallingConvention = CallingConvention.StdCall)]
-		static extern bool FreeLibrary(IntPtr h_dll);
+		private static extern bool FreeLibrary(IntPtr h_dll);
 		#endregion
 
 		/// <summary>

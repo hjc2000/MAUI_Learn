@@ -1,14 +1,6 @@
-﻿using Microsoft.JSInterop;
-using RazorClassLibrary1;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Trumpeter.Pages
+﻿namespace Trumpeter.Pages
 {
-	public partial class NameListEditor:IDisposable
+	public partial class NameListEditor : IDisposable
 	{
 		#region 构造、析构、释放资源
 		public NameListEditor()
@@ -38,10 +30,10 @@ namespace Trumpeter.Pages
 		#endregion
 
 		#region 类私有字段
-		string _storageDir;	//应用数据储存路径
-		Stream _fileStream;	//文件流
-		StreamWriter _writer;	//文件流读取器
-		StreamReader _reader;   //文件流写入器
+		private string _storageDir;  //应用数据储存路径
+		private Stream _fileStream;  //文件流
+		private StreamWriter _writer;    //文件流读取器
+		private StreamReader _reader;   //文件流写入器
 		#endregion
 
 		#region 生命周期事件
@@ -58,11 +50,11 @@ namespace Trumpeter.Pages
 
 
 		#region 绑定到DOM中的变量
-		string _textAreaValue = string.Empty;
+		private string _textAreaValue = string.Empty;
 		#endregion
 
 		#region DOM事件
-		async void OnClick()
+		private async void OnClick()
 		{
 			/*将流的大小设置为0，则将文件大小设置为0.不这么做的话如果原本文件较大，我们这次
 			写入较短的内容后，打开文件就会发现文件的开头是我们写的内容，后面跟着一些原本的内容

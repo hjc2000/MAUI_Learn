@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using Microsoft.JSInterop;
-using Trumpeter.Data;
-using Trumpeter.Pages;
+﻿using Trumpeter.Pages;
 
 namespace Trumpeter;
 
@@ -18,7 +15,7 @@ public static class MauiProgram
 			});
 
 		builder.Services.AddMauiBlazorWebView();
-		#if DEBUG
+#if DEBUG
 		builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
 
