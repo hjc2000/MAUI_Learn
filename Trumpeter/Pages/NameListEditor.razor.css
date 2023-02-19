@@ -14,3 +14,11 @@ textarea{
 	width:100%;
 	padding:10px;
 }
+
+button {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+button:active:enabled {
+	background-color: rgb(12, 206, 47, 0.78);
+}

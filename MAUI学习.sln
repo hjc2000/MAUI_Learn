@@ -6,7 +6,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trumpeter", "Trumpeter\Trum
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DllOperator", "DllOperator\DllOperator.csproj", "{CBB7D85E-F18B-4B65-963B-0C7D070901DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorClassLibrary1", "RazorClassLibrary1\RazorClassLibrary1.csproj", "{4D589EBF-FD43-40FE-A247-E989C5C0D5C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorClassLibrary1", "RazorClassLibrary1\RazorClassLibrary1.csproj", "{4D589EBF-FD43-40FE-A247-E989C5C0D5C7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StaticLib1", "StaticLib1\StaticLib1.vcxproj", "{73FC7A26-2DBE-4CDB-8B86-A96A0DAB3E80}"
 EndProject
