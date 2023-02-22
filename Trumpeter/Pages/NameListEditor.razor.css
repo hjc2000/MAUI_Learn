@@ -5,7 +5,7 @@
 }
 
 #body {
-	height: 100%;
+	height: 100%; /*纵向弹性盒不会主动撑开主轴，所以需要设置高度*/
 	display: flex;
 	flex-direction: column;
 }
@@ -17,8 +17,6 @@ h1 {
 }
 
 textarea {
-	width: 100%;
-	height: 100%;
 	flex: 1;
 	padding: 10px;
 	resize: none;
