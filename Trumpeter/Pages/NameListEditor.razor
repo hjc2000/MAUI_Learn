@@ -2,10 +2,9 @@
 @using RazorClassLibrary1;
 @inject IJSRuntime JS;
 
-<h1>名单编辑器</h1>
-<button @onclick="OnClick">点击保存</button>
-<div id="box">
+<div id="body">
+	<h1>名单编辑器</h1>
+	<button @onclick="OnClick">点击保存</button>
 	<textarea placeholder="在这里输入名单，一行一个名称。一行的内容会被当成一个名字"
-			  @bind="_textAreaValue">
-	</textarea>
+			  @bind="_textAreaValue"></textarea>
 </div>
