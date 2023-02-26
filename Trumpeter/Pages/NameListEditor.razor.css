@@ -22,7 +22,7 @@ h1 {
 }
 
 textarea {
-	flex: 1;
+	flex: 1 10em;
 	padding: 10px;
 	resize: none;
 }
